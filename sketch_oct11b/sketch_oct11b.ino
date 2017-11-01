@@ -3,8 +3,7 @@ int k = 0;
 
 void setup() {
   // put your setup code here, to run once:
-  /*
-  pinMode(13, OUTPUT);
+  /*pinMode(13, OUTPUT);
   pinMode(12, OUTPUT);
   pinMode(11, OUTPUT);
   pinMode(9, OUTPUT);
@@ -13,8 +12,7 @@ void setup() {
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(3, OUTPUT);
-  pinMode(2, OUTPUT);
-  */
+  pinMode(2, OUTPUT);*/
   pinMode(1, OUTPUT);//magnet
   Serial.begin(9600); //intiates comunication with the computer
   while (!Serial) {
@@ -25,6 +23,10 @@ void setup() {
   Serial.write("change thing in bottom to no line ending\n\n");
   digitalWrite(1, HIGH);
 }
+
+/*void read(String &dest) { //defines read func
+    
+}*/
 
 void loop() {
   thing();
@@ -104,7 +106,7 @@ void thing() {
   Serial.print("I received: ");
   Serial.println(answr, DEC);
   Serial.write("\n\n");
-  if(answr == 99) {
+  if(answr == 97) {
     Serial.write("YOUR RIGHT!!!!!!\n");
   } else {
     Serial.write("FAKE NEWS!!!!!!!\n-------------------------------\n");
